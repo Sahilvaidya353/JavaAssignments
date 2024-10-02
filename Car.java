@@ -1,31 +1,37 @@
-package Assignment2;
+package Assignment6;
+class Car {
+    private final String companyName;
+    private final String model;
+    private final Engine engine;
+    
 
-import java.util.Scanner;
+    public Car(String companyName, String model, Engine engine) {
+        this.companyName = companyName;
+        this.model = model;
+        this.engine = engine;
+    }
 
-public class Car {
-	private String carModel;
-	private String carName;
-	private double carPrice;
-	private String carOwner;
+    public void start() {
+        boolean result= true;
+    	if (result) {
+           
+            System.out.println("The" +companyName+ " " + model + " has started");
+        } else {
+            System.out.println("The " +companyName + " " + model + " is already running.");
+        }
+    }
 
-	public void setCarDetails() {
-		Scanner scanner = new Scanner(System.in);
-		System.out.print("Enter Car Model: ");
-		carModel = scanner.nextLine();
-		System.out.print("Enter Car Name: ");
-		carName = scanner.nextLine();
-		System.out.print("Enter Car Price: ");
-		carPrice = scanner.nextDouble();
-		scanner.nextLine();
-		System.out.print("Enter Car Owner: ");
-		carOwner = scanner.nextLine();
-	}
+    public void stop() {
+     boolean  result= false;
+    	if (result) {
+            
+            System.out.println("The" + companyName + " " + model + " has stopped.");
+        } else {
+            System.out.println("The" + companyName + " " + model + " is already stopped.");
+        }
+    }
 
-	public void displayCarDetails() {
-		System.out.println("Car Model: " + carModel);
-		System.out.println("Car Name: " + carName);
-		System.out.println("Car Price: $" + carPrice);
-		System.out.println("Car Owner: " + carOwner);
-		System.out.println();
-	}
+    public void displayEngineDetails() {
+        System.out.println(engine.displayDetails());
+    }
 }
